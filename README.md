@@ -1,4 +1,4 @@
-# JSP를 이용한 밀키트 
+# Java Spring framework를 이용한 밀키트 
 
 ## 0. 목차
 
@@ -29,7 +29,7 @@ jsp을 사용한 회원들은 자유롭게 판매자가 올린 밀키트를 주�
 관리자는 기간별 상품 판매 통계를 확인할 수 있습니다.
 
 ## 2. 기술
-1. Web Front : `HTML5` , `CSS`, `JavaScript`
+1. Web Front : `HTML5` , `CSS`, `JavaScript`, `Jquery` , `Ajax`
 2. Web Server :  `Java`, `ApacheTomcat`
 3. DBMS : `Oracle DB`
 4. 개발환경 : `Eclipse, Spring framework`
