@@ -10,7 +10,7 @@
 
 [4. Flow Chart](#4-Flow-Chart)
 
-[5. database EER Diagram](#5-database-eer-diagram)
+[5. database ER Diagram](#5-database-er-diagram)
 
 [6. 사이트 맵](#6-사이트-맵)
 
@@ -47,7 +47,7 @@ jsp을 사용한 회원들은 자유롭게 판매자가 올린 밀키트를 주�
 ![image](https://user-images.githubusercontent.com/81474598/135708462-7bce6caa-f6c0-4d37-a1e5-c322b1357e4e.png)
 
 
-## 5. database EER Diagram
+## 5. database ER Diagram
 ![캡처](https://user-images.githubusercontent.com/81474598/135708360-7d1501c2-e749-426b-b15a-4779d3728dac.png)
 
 
@@ -56,6 +56,12 @@ jsp을 사용한 회원들은 자유롭게 판매자가 올린 밀키트를 주�
 
 
 ## 7. 기능
+1. 로그인/회원가입
+2. 게시판 CRUD
+3. 장바구니/결제
+4. 마이페이지
+5. 기간별 통계 차트
+
 1. 메인페이지 - 베스트 상품 (별점순으로 높은 상품 3개가 메인페이지에 표시)
 2. 메인페이지 - 베스트 리뷰 (별점중 4점 이상이며 사진이 몇장 이상인 리뷰 3개를 메인페이지에 표시)
 3. 회원가입 - sms인증 (SENS API)
@@ -72,23 +78,25 @@ jsp을 사용한 회원들은 자유롭게 판매자가 올린 밀키트를 주�
 14. 결제 - 카카오 결제 API 사용
 15. 주문내역 조회(상호)
 16. 마이페이지(일반) - 수정 및 주문 내역 조회 가능하며 환불처리 가능
-17. 마이페이지(상호) - 회원정보 수정 및 상품 CRUD 가능
-18. 관리자페이지 - 회원정보 CRUD 가능
-19. 관리자페이지 - 사업자 정보 출력 및 해당 상호 상품 목록 출력 가능
-20. 관리자페이지 - Datepicker와 Zingchart를 활용한 기간별 상품 판매량을 그래프 및 수치로 확인 
+17. 마이페이지(일반) - 상품 평가 기능
+18. 마이페이지(상호) - 회원정보 수정 및 상품 CRUD 가능
+19. 관리자페이지 - 회원정보 CRUD
+20. 관리자페이지 - 사업자 정보 출력 및 해당 상호 상품 목록 출력 가능
+21. 관리자페이지 - Datepicker와 Zingchart를 활용한 기간별 상품 판매량을 그래프 및 수치로 확인
 
 
 ## 8. 구현한 기능
 제가 구현한 기능입니다.
 
-1. 게시판 - 맛집게시판/자유게시판 2개로 나누기 https://blog.naver.com/2ejhi/222018115144
-2. 게시판 - 사진 올리기 https://blog.naver.com/2ejhi/222018153891
-3. 댓글 기능 https://blog.naver.com/2ejhi/222018209920
-4. 맛집 게시판 평가 기능 https://blog.naver.com/2ejhi/222018230829
-5. 페이징 https://blog.naver.com/2ejhi/222025797828
-6. 찜, 찜목록  https://blog.naver.com/2ejhi/222025824297
-7. 도로명주소 api https://blog.naver.com/2ejhi/222025860991
-8. 검색기능 https://blog.naver.com/2ejhi/222019196350
+1. 회원가입 - SMS 인증 (SENS API)
+2. 회원가입 - 도로명 주소 API (Daum API)
+3. 회원가입 - Ajax를 이용한 아이디 중복 검사 및 그 외 유효성 검사
+4. 로그인
+5. 상품 리스트 - 분류/조리시간과 전체/상품명/상호명에 따른 검색 기능
+6. 상품 리스트 - 페이징 처리
+7. 장바구니 - Ajax를 용한 상품 변경
+8. 관리자페이지 - 회원정보 CRUD
+9. 관리자페이지 - Zingchart를 활용한 기간별 상품 판매량을 그래프로 표시
 
 
 ## 9. 게시물 실행 영상
