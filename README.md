@@ -39,7 +39,7 @@ jsp을 사용한 회원들은 자유롭게 판매자가 올린 밀키트를 주�
 
 
 ## 4. 사이트맵
-![image](https://github.com/DevKS-Yet/202109project/issues/1#issue-1013509983)
+![image](https://user-images.githubusercontent.com/81474598/135651292-d68b441d-7d2a-4df0-8643-ab00f277f77d.png)
 
 
 ## 5. 기능
