@@ -36,7 +36,7 @@ jsp을 사용한 회원들은 자유롭게 판매자가 올린 밀키트를 주�
 
 
 ## 3. database EER Diagram
-![캡처](https://user-images.githubusercontent.com/58822916/86928061-05240a00-c16f-11ea-88e4-3fa6daacfa23.JPG)
+![캡처](https://user-images.githubusercontent.com/81474598/135708360-7d1501c2-e749-426b-b15a-4779d3728dac.png)
 
 
 ## 4. 사이트맵
