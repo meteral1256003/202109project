@@ -27,7 +27,7 @@ public class SmsService {
 		
 		messages.add(new MessagesRequestDto(recipientPhoneNumber, content));
 		
-		SmsRequestDto smsRequestDto = new SmsRequestDto("SMS", "COMM", "82", "01093093928", "MangoLtd", messages);
+		SmsRequestDto smsRequestDto = new SmsRequestDto("SMS", "COMM", "82", "{발신자 번호}", "MangoLtd", messages);
 		
 		ObjectMapper objectMapper = new ObjectMapper();
 		String jsonBody = objectMapper.writeValueAsString(smsRequestDto);
@@ -35,7 +35,7 @@ public class SmsService {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.set("x-ncp-apigw-timestamp", time.toString());
-		headers.set("x-ncp-iam-access-key", "l7rO1H27iskRil8waplE");
+		headers.set("x-ncp-iam-access-key", "{access-key}");
 		
 		String sig = makeSignature(time);
 		headers.set("x-ncp-apigw-signature-v2", sig);
@@ -43,7 +43,7 @@ public class SmsService {
 		HttpEntity<String> body = new HttpEntity<String>(jsonBody, headers);
 		
 		RestTemplate restTemplate = new RestTemplate();
-		SendSmsResponseDto sendSmsResponseDto = restTemplate.postForObject(new URI("https://sens.apigw.ntruss.com/sms/v2/services/ncp:sms:kr:270824078609:smscerti/messages"), body, SendSmsResponseDto.class);
+		SendSmsResponseDto sendSmsResponseDto = restTemplate.postForObject(new URI("https://sens.apigw.ntruss.com/sms/v2/services/{ServiceId}/messages"), body, SendSmsResponseDto.class);
 		
 		return sendSmsResponseDto;
 	}
@@ -52,10 +52,10 @@ public class SmsService {
 		String space = " ";					// one space
 		String newLine = "\n";					// new line
 		String method = "POST";					// method
-		String url = "/sms/v2/services/ncp:sms:kr:270824078609:smscerti/messages";	// url (include query string)
+		String url = "/sms/v2/services/{ServiceId}/messages";	// url (include query string)
 		String timestamp = time.toString();			// current timestamp (epoch)
-		String accessKey = "l7rO1H27iskRil8waplE";			// access key id (from portal or sub account)
-		String secretKey = "mv1Ad2fyfKogDDHvEQ9yka61tkAO1eFvWmgLLQ7Y";
+		String accessKey = "{AccessKey}";			// access key id (from portal or sub account)
+		String secretKey = "{SecretKey}";
 
 		String message = new StringBuilder()
 			.append(method)
