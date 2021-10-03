@@ -426,25 +426,30 @@ margin-left: 5px;
 <!-- 당일,1주일,1개월,3개월,12개월 클릭 시 datePicker에 그에 반하는 값 삽입. -->
 <script type="text/javascript">
 today=new Date();
+lastDay = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate();
 function day(){
-	document.getElementById("datepicker1").value=today.getFullYear()+"-0"+eval(today.getMonth()+1)+"-"+today.getDate();
-	document.getElementById("datepicker2").value=today.getFullYear()+"-0"+eval(today.getMonth()+1)+"-"+today.getDate();
+	document.getElementById("datepicker1").value=today.getFullYear()+"-"+("0"+(today.getMonth()+1)).slice(-2)+"-"+("0"+today.getDate()).slice(-2);
+	document.getElementById("datepicker2").value=today.getFullYear()+"-"+("0"+(today.getMonth()+1)).slice(-2)+"-"+("0"+today.getDate()).slice(-2);
 }
 function OneWeek(){
-	document.getElementById("datepicker1").value=today.getFullYear()+"-0"+eval(today.getMonth()+1)+"-"+eval(today.getDate()-7);
-	document.getElementById("datepicker2").value=today.getFullYear()+"-0"+eval(today.getMonth()+1)+"-"+today.getDate();
+	if(today.getDate() <= 7){
+		document.getElementById("datepicker1").value=today.getFullYear()+"-"+("0"+(today.getMonth())).slice(-2)+"-"+("0"+(today.getDate()-7+lastDay)).slice(-2);
+	} else {
+		document.getElementById("datepicker1").value=today.getFullYear()+"-"+("0"+(today.getMonth()+1)).slice(-2)+"-"+("0"+(today.getDate()-7)).slice(-2);
+	}
+	document.getElementById("datepicker2").value=today.getFullYear()+"-"+("0"+(today.getMonth()+1)).slice(-2)+"-"+("0"+today.getDate()).slice(-2);
 }
 function OneMonth(){
-	document.getElementById("datepicker1").value=today.getFullYear()+"-0"+eval(today.getMonth())+"-"+eval(today.getDate());
-	document.getElementById("datepicker2").value=today.getFullYear()+"-0"+eval(today.getMonth()+1)+"-"+today.getDate();
+	document.getElementById("datepicker1").value=today.getFullYear()+"-"+("0"+today.getMonth()).slice(-2)+"-"+("0"+today.getDate()).slice(-2);
+	document.getElementById("datepicker2").value=today.getFullYear()+"-"+("0"+(today.getMonth()+1)).slice(-2)+"-"+("0"+today.getDate()).slice(-2);
 }
 function ThreeMonths(){
-	document.getElementById("datepicker1").value=today.getFullYear()+"-0"+eval(today.getMonth()-2)+"-"+eval(today.getDate());
-	document.getElementById("datepicker2").value=today.getFullYear()+"-0"+eval(today.getMonth()+1)+"-"+today.getDate();
+	document.getElementById("datepicker1").value=today.getFullYear()+"-"+("0"+(today.getMonth()-2)).slice(-2)+"-"+("0"+today.getDate()).slice(-2);
+	document.getElementById("datepicker2").value=today.getFullYear()+"-"+("0"+(today.getMonth()+1)).slice(-2)+"-"+("0"+today.getDate()).slice(-2);
 }
 function TwelveMonths(){
-	document.getElementById("datepicker1").value=(today.getFullYear()-1)+"-0"+eval(today.getMonth()+1)+"-"+eval(today.getDate());
-	document.getElementById("datepicker2").value=today.getFullYear()+"-0"+eval(today.getMonth()+1)+"-"+today.getDate();
+	document.getElementById("datepicker1").value=(today.getFullYear()-1)+"-"+("0"+(today.getMonth()+1)).slice(-2)+"-"+("0"+today.getDate()).slice(-2);
+	document.getElementById("datepicker2").value=today.getFullYear()+"-"+("0"+(today.getMonth()+1)).slice(-2)+"-"+("0"+today.getDate()).slice(-2);
 }
 
 </script>
